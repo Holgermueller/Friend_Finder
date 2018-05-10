@@ -5,10 +5,12 @@ const path = require('path');
 
 //get server running
 const app = express()
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, "/app/public/home.html")));
+//parse data with express
 
-app.get('/survey', (req, res) => res.sendFile(path.join(__dirname, '/app/public/survey.html')));
+//ROUTER
+let apiRoute = require('./app/routing/apiRoutes.js');
+let htmlRoute = require('./app/routing/htmlRoutes.js')(app);
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+app.listen(3000, () => console.log('Example app listening on port: ' + PORT + '!'))
