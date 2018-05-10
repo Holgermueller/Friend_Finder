@@ -8,5 +8,7 @@ module.exports = function(app){
     })
 }
 //POST routes /api/friends for handling incoming survey results
+// app.post('/api/friends', function(req, res){
 
+// })
 //and compatability logic
