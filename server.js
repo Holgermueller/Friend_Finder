@@ -7,7 +7,6 @@ const path = require('path');
 const app = express()
 const PORT = 3000;
 
-app.get('/', function(req, res) {
-    res.send('Welcome to the friend finder!');
-    res.sendFile(path.join(__dirname, "home.html"));
-}); 
+app.get('/', (req, res) => res.send('Hello World!'))
+
+app.listen(3000, () => console.log('Example app listening on port 3000!'))
