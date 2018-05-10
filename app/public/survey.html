@@ -34,7 +34,9 @@
         <div id="questionContainer"></div>
         <br>
         <br>
-        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">Submit</button>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" data-toggle="modal" data-targe="#resultsModalCenter">
+            Submit
+        </button>
         <hr>
         <footer class="footer">
             <div class="container">
@@ -46,7 +48,8 @@
             </div>
         </footer>
     </div>
-<!--modal-->
+
+    <!--modal-->
     <div id="resultsModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!--modal content-->
@@ -116,21 +119,32 @@
                     let optionHTML = $("<option>");
                     optionHTML.val(choices[i]);
                     let text = choices[i];
-                    if (choices[i] === 1){
+                    if (choices[i] === 1) {
                         text += " (Strongly Disagree)"
-                    } else if (choices[i] === 5){
+                    } else if (choices[i] === 5) {
                         text += " (Strongly Agree)"
-                    } 
+                    }
                     optionHTML.text(text);
                     selectHTML.append(optionHTML);
                 }
                 return selectHTML;
             }
 
-            $("#submit").on("click", function(){
+            function validateForm() {
+                let isValid = true;
+                $(".form-control").each(function () {
+                    if ($(this).val() === "") {
+                        isValid = false;
+                    }
+                });
+
+                $(".chos")
+            }
+
+            $("#submit").on("click", function () {
                 let options = $("#questionContainer").find("select option:selected");
                 let answers = [];
-                options.each(function(index, option){
+                options.each(function (index, option) {
                     answers.push($(option).val());
                 });
                 console.log(answers);
