@@ -16,4 +16,6 @@
 //         1
 //       ]
 //   }
-  
+let listOfFriends = [{}]
+
+module.exports = listOfFriends;
