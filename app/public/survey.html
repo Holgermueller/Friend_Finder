@@ -1,51 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Survey</title>
 
-<!--Bootstrap-->
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
+    <!--Bootstrap-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9"
+        crossorigin="anonymous"></script>
 
 </head>
+
 <body>
 
     <div class="container">
         <h2>Survey Questions</h2>
         <hr>
-        <h3><strong>About You</strong></h3>
+        <h3>
+            <strong>About You</strong>
+        </h3>
         <h4>Name (Required)</h4>
         <input type="text" id="name" class="form-control" required>
         <h4>Link to Photo Image (Required)</h4>
         <input type="text" id="photo" class="form-control" required>
         <hr>
 
-        <h3><strong></strong></h3>
-        <h4></h4>
-        <h3><strong></strong></h3>
-        <h4></h4>
-        <h3><strong></strong></h3>
-        <h4></h4>
-        <h3><strong></strong></h3>
-        <h4></h4>
-        <h3><strong></strong></h3>
-        <h4></h4>
-        <h3><strong></strong></h3>
-        <h4></h4>
-        <h3><strong></strong></h3>
-        <h4></h4>
-        <h3><strong></strong></h3>
-        <h4></h4>
-        <h3><strong></strong></h3>
-        <h4></h4>
-        <h3><strong></strong></h3>
-        <h4></h4>
-        <h3><strong></strong></h3>
-        <h4></h4>
+        <div id="questionContainer"></div>
         <br>
         <br>
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">Submit</button>
@@ -53,19 +39,83 @@
         <footer class="footer">
             <div class="container">
                 <p>
-                <a href="#">API Friends</a>
-                |
-                <a href="#">GitHub Repo</a>
+                    <a href="#">API Friends</a>
+                    |
+                    <a href="#">GitHub Repo</a>
                 </p>
             </div>
         </footer>
     </div>
-  
-    
 
+    <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            let choices = [1, 2, 3, 4, 5];
+            let questions = [
+                "Your mind is always buzzing with unexplored ideas and plans.",
+                "Generally speaking, you rely more on your experience than your imagination.",
+                "You find it easy to stay relaxed and focused even when there is some pressure.",
+                "You rarely do something just out of sheer curiosity.",
+                "People can rarely upset you.",
+                "It is often difficult for you to relate to other people’s feelings.",
+                "In a discussion, truth should be more important than people’s sensitivities.",
+                "You rarely get carried away by fantasies and ideas.",
+                "You think that everyone’s views should be respected regardless of whether they are supported by facts or not.",
+                "You feel more energetic after spending time with a group of people."
+            ]
 
+            for (let i = 0; i < questions.length; i++) {
+                let questionHTML = getQuestionHTML(questions[i], i + 1);
+                $('#questionContainer').append(questionHTML);
+            }
 
-<!--Scripts-->
+            function getQuestionHTML(question, number) {
+                //use jquery to make html elements to represent question
+                let questionHTML = $("<div>");
+                let titleHTML = $("<h3>");
+                titleHTML.text("Question " + number);
+                questionHTML.append(titleHTML);
+                let questionTextHTML = $("<h4>");
+                questionTextHTML.text(question);
+                questionHTML.append(questionTextHTML);
+                let selectHTML = getChoicesHTML();
+                questionHTML.append(selectHTML);
+                return questionHTML;
+            }
 
+            function getChoicesHTML() {
+                let selectHTML = $("<select>");
+                selectHTML.append("<option value='0'>Select one</option>");
+
+                for (let i = 0; i < choices.length; i++) {
+                    let optionHTML = $("<option>");
+                    optionHTML.val(choices[i]);
+                    let text = choices[i];
+                    if (choices[i] === 1){
+                        text += " (Strongly Disagree)"
+                    } else if (choices[i] === 5){
+                        text += " (Strongly Agree)"
+                    } 
+                    optionHTML.text(text);
+                    selectHTML.append(optionHTML);
+                }
+                return selectHTML;
+            }
+
+            $("#submit").on("click", function(){
+                let options = $("#questionContainer").find("select option:selected");
+                let answers = [];
+                options.each(function(index, option){
+                    answers.push($(option).val());
+                });
+                console.log(answers);
+            })
+
+            //NO CODE BELOW THIS LINE
+        });
+    </script>
 </body>
+
 </html>
