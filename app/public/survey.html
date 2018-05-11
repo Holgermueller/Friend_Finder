@@ -22,10 +22,8 @@
     <div class="container">
         <h2>Survey Questions</h2>
         <hr>
-        <h3>
-                <strong><i class="fas fa-book"> About You</i></strong>
-        </h3>
-        <h4>Name (Required)</h4>
+        <h3><strong><i class="fas fa-book"> About You</i></strong></h3>
+        <h4><i class="fas fa-user"> Name (Required)</i></h4>
         <input type="text" id="name" class="form-control" required>
         <h4><i class="fas fa-camera-retro"> Link to Photo Image (Required)</i></h4>
         <input type="text" id="photo" class="form-control" required>
@@ -133,12 +131,11 @@
             function validateForm() {
                 let isValid = true;
                 $(".form-control").each(function () {
-                    if ($(this).val() === "") {
+                    if ($(this).val() === " ") {
                         isValid = false;
                     }
                 });
 
-                $(".chos")
             }
 
             $("#submit").on("click", function () {
@@ -148,6 +145,7 @@
                     answers.push($(option).val());
                 });
                 console.log(answers);
+                //$.post
             })
 
             //NO CODE BELOW THIS LINE
