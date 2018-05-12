@@ -135,15 +135,18 @@
                         isValid = false;
                     }
                 });
-
+                return isValid;
             }
 
             $("#submit").on("click", function () {
                 let options = $("#questionContainer").find("select option:selected");
+                let validation = isValid;
                 let answers = [];
                 options.each(function (index, option) {
                     answers.push($(option).val());
                 });
+                console.log(name);
+                console.log(photo);
                 console.log(answers);
                 //$.post
             })
