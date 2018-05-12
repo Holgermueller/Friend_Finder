@@ -21,7 +21,7 @@
 <body>
 
     <div class="container">
-        <h2>Survey Questions</h2>
+        <h2><i class="fas fa-check-circle"> Survey Questions</i></h2>
         <hr>
         <h3>
             <strong>
@@ -88,16 +88,16 @@
             //dynamically create survey form
             let choices = [1, 2, 3, 4, 5];
             let questions = [
-                "Your mind is always buzzing with unexplored ideas and plans.",
+                "Your mind constantly buzzes with unfulfilled ideas and plans.",
                 "Generally speaking, you rely more on your experience than your imagination.",
                 "You find it easy to stay relaxed and focused even when there is some pressure.",
                 "You rarely do something just out of sheer curiosity.",
-                "People can rarely upset you.",
+                "People can constantly upset you.",
                 "It is often difficult for you to relate to other people’s feelings.",
                 "In a discussion, truth should be more important than people’s sensitivities.",
                 "You rarely get carried away by fantasies and ideas.",
                 "You think that everyone’s views should be respected regardless of whether they are supported by facts or not.",
-                "You feel more energetic after spending time with a group of people."
+                "You feel drained after spending time with a group of people."
             ]
 
             for (let i = 0; i < questions.length; i++) {
@@ -162,19 +162,17 @@
                         name: $('#name').val().trim(),
                         profilePic: $('#photo').val().trim(),
                         scores: [
-
+                            //finish here
                         ]
                     }
                 }
                 let options = $("#questionContainer").find("select option:selected");
-                let answers = [];
-                options.each(function (index, option) {
+                let scores = [];
+                scores.each(function (index, option) {
                     answers.push($(option).val());
                 });
-                console.log(name);
-                console.log(photo);
-                console.log(answers);
             })
+            console.log(aNewFriend);
 
             //save URL in variable
             const surveyURL = window.location.origin;
