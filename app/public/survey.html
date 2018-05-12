@@ -13,8 +13,9 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9"
         crossorigin="anonymous"></script>
-<!--fontawesome-->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
 </head>
 
 <body>
@@ -22,10 +23,18 @@
     <div class="container">
         <h2>Survey Questions</h2>
         <hr>
-        <h3><strong><i class="fas fa-book"> About You</i></strong></h3>
-        <h4><i class="fas fa-user"> Name (Required)</i></h4>
+        <h3>
+            <strong>
+                <i class="fas fa-book"> About You</i>
+            </strong>
+        </h3>
+        <h4>
+            <i class="fas fa-user"> Name (Required)</i>
+        </h4>
         <input type="text" id="name" class="form-control" required>
-        <h4><i class="fas fa-camera-retro"> Link to Photo Image (Required)</i></h4>
+        <h4>
+            <i class="fas fa-camera-retro"> Link to Photo Image (Required)</i>
+        </h4>
         <input type="text" id="photo" class="form-control" required>
         <hr>
 
@@ -76,6 +85,7 @@
         crossorigin="anonymous"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            //dynamically create survey form
             let choices = [1, 2, 3, 4, 5];
             let questions = [
                 "Your mind is always buzzing with unexplored ideas and plans.",
@@ -96,7 +106,7 @@
             }
 
             function getQuestionHTML(question, number) {
-                //use jquery to make html elements to represent question
+                //use jquery to make html elements to hold questions
                 let questionHTML = $("<div>");
                 let titleHTML = $("<h3>");
                 titleHTML.text("Question " + number);
@@ -110,6 +120,7 @@
             }
 
             function getChoicesHTML() {
+                //dynamically create dropdown boxes
                 let selectHTML = $("<select>");
                 selectHTML.append("<option value='0'>Select one</option>");
 
@@ -128,19 +139,34 @@
                 return selectHTML;
             }
 
-            function validateForm() {
-                let isValid = true;
-                $(".form-control").each(function () {
-                    if ($(this).val() === " ") {
-                        isValid = false;
-                    }
-                });
-                return isValid;
-            }
-
             $("#submit").on("click", function () {
+                //form validation
+                function formValidated() {
+                    let formIsValid = true;
+                    $(".form-control").each(function () {
+                        if ($(this).val() === "") {
+                            formIsValid = false;
+                        }
+                    });
+
+                    $("#questionContainer").each(function () {
+                        if ($(this).val() === "") {
+                            formIsValid = false;
+                        }
+                    });
+                    return formIsValid;
+                }
+                //if form is valid
+                if (formValidated() === true) {
+                    let aNewFriend = {
+                        name: $('#name').val().trim(),
+                        profilePic: $('#photo').val().trim(),
+                        scores: [
+
+                        ]
+                    }
+                }
                 let options = $("#questionContainer").find("select option:selected");
-                let validation = isValid;
                 let answers = [];
                 options.each(function (index, option) {
                     answers.push($(option).val());
@@ -148,8 +174,14 @@
                 console.log(name);
                 console.log(photo);
                 console.log(answers);
-                //$.post
             })
+
+            //save URL in variable
+            const surveyURL = window.location.origin;
+
+            //AJAX post to friends API
+
+            //show modal
 
             //NO CODE BELOW THIS LINE
         });
