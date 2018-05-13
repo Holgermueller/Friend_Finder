@@ -21,7 +21,9 @@
 <body>
 
     <div class="container">
-        <h2><i class="fas fa-check-circle"> Survey Questions</i></h2>
+        <h2>
+            <i class="fas fa-check-circle"> Survey Questions</i>
+        </h2>
         <hr>
         <h3>
             <strong>
@@ -162,20 +164,31 @@
                         name: $('#name').val().trim(),
                         profilePic: $('#photo').val().trim(),
                         scores: [
-                            //finish here
+                            $("#questionContainer").find("select option:selected"),
+                        scores.each(function (index, option) {
+                            answers.push($(option).val());
+                        }
                         ]
-                    }
-                }
-                let options = $("#questionContainer").find("select option:selected");
-                let scores = [];
-                scores.each(function (index, option) {
-                    answers.push($(option).val());
-                });
-            })
-            console.log(aNewFriend);
+                };
+                //save URL in variable
+                const surveyURL = window.location.origin;
+            }
+                // let options = $("#questionContainer").find("select option:selected");
+                // let scores = [];
+                // scores.each(function (index, option) {
+                //     answers.push($(option).val());
 
-            //save URL in variable
-            const surveyURL = window.location.origin;
+                    //AJAX post data to friend array
+                    $.post(surveyURL +"/api/friends", aNewFriend, function(date){
+                        $("#matchName").text(data.name);
+                        $("#matchPic").attr("src", data.profilePic);
+                    });
+
+                    
+        
+        console.log(aNewFriend);
+
+
 
             //AJAX post to friends API
 
