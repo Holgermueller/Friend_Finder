@@ -43,7 +43,7 @@
         <div id="questionContainer"></div>
         <br>
         <br>
-        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" data-toggle="modal" data-targe="#resultsModalCenter">
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" data-toggle="modal" data-target="#resultsModalCenter">
             Submit
         </button>
         <hr>
@@ -158,6 +158,10 @@
                 }
                 //if form is valid
                 if (formValidated() === true) {
+                    let scores = [];
+                    scores.each(function (index, option) {
+                        answers.push($(option).val());
+                    });
                     let aNewFriend = {
                         name: $('#name').val().trim(),
                         profilePic: $('#photo').val().trim(),
@@ -165,6 +169,7 @@
                             $("#questionContainer").find("select option:selected")
                         ]
                     };
+                    console.log(aNewFriend);
                     //save URL in variable
                     const surveyURL = window.location.origin;
 
@@ -176,21 +181,22 @@
 
                     //show modal
                     $('#submit').on('show.bs.modal', function (event) {
-                        var button = $(event.relatedTarget) // Button that triggered the modal
-                        var recipient = button.data('whatever') // Extract info from data-* attributes
+                        const button = $(event.relatedTarget) // Button that triggered the modal
+                        let recipient = button.data('select option:selected') // Extract info from data-* attributes
                         // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
                         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-                        var modal = $(this)
+                        let modal = $(this)
                         modal.find('.modal-title').text('New message to ' + recipient)
                         modal.find('.modal-body input').val(recipient)
                     })
 
                 } else {
-
-                    $('#submit').on('shown.bs.modal', function () {
-                        $('#myInput').trigger('focus')
-                        $('.modal-body').append(document.createTextNode('You must fill out all of the fields.'))
-                    })
+                    //show modal
+                    alert("You must fill out all of the fields before you submit.")
+                    // $('#submit').on('shown.bs.modal', function () {
+                    //     $('#myInput').trigger('focus')
+                    //     $('.modal-body').append(document.createTextNode('You must fill out all of the fields.'))
+                    // })
 
                 }
 
