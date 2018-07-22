@@ -21,6 +21,13 @@
 <body>
 
     <div class="container">
+        <br>
+        <div>
+            <a href="/home">
+                <h6>Home</h6>
+            </a>
+        </div>
+        <br>
         <h2>
             <i class="fas fa-check-circle"> Survey Questions</i>
         </h2>
@@ -59,7 +66,7 @@
     </div>
 
     <!--modal-->
-    <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -83,8 +90,9 @@
     <!--Scripts-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+
     <script type="text/javascript">
-        $(document).ready(function () {
+        $(document).ready(() => {
             //dynamically create survey form
             let choices = [1, 2, 3, 4, 5];
             let questions = [
@@ -139,17 +147,17 @@
                 return selectHTML;
             }
 
-            $("#submit").on("click", function () {
+            $("#submit").on("click", () => {
                 //form validation
                 function formValidated() {
                     let formIsValid = true;
-                    $(".form-control").each(function () {
+                    $(".form-control").each(() => {
                         if ($(this).val() === "") {
                             formIsValid = false;
                         }
                     });
 
-                    $("#questionContainer").each(function () {
+                    $("#questionContainer").each(() => {
                         if ($(this).val() === "") {
                             formIsValid = false;
                         }
@@ -159,7 +167,7 @@
                 //if form is valid
                 if (formValidated() === true) {
                     let scores = [];
-                    scores.each(function (index, option) {
+                    scores.each((index, option) => {
                         answers.push($(option).val());
                     });
                     let aNewFriend = {
@@ -174,13 +182,13 @@
                     const surveyURL = window.location.origin;
 
                     //AJAX post data to friend array
-                    $.post(surveyURL + "/api/friends", aNewFriend, function (date) {
+                    $.post(surveyURL + "/api/friends", aNewFriend, (date) => {
                         $("#matchName").text(data.name);
                         $("#matchPic").attr("src", data.profilePic);
                     });
 
                     //show modal
-                    $('#submit').on('show.bs.modal', function (event) {
+                    $('#submit').on('show.bs.modal', (event) => {
                         const button = $(event.relatedTarget) // Button that triggered the modal
                         let recipient = button.data('select option:selected') // Extract info from data-* attributes
                         // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
