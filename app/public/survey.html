@@ -12,6 +12,8 @@
     <!--fontawesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
         crossorigin="anonymous">
+    <!--Chosen-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
 </head>
 
 <body>
@@ -30,27 +32,31 @@
             <i class="fas fa-check-circle"> Survey Questions</i>
         </h2>
         <hr>
-        <h3>
-            <strong>
-                <i class="fas fa-book"> About You</i>
-            </strong>
-        </h3>
-        <h4>
-            <i class="fas fa-user"> Name (Required)</i>
-        </h4>
-        <input type="text" id="name" class="form-control" required>
-        <h4>
-            <i class="fas fa-camera-retro"> Link to Photo Image (Required)</i>
-        </h4>
-        <input type="text" id="photo" class="form-control" required>
-        <hr>
+        <form>
+            <div class="form-group">
+                <h3>
+                    <strong>
+                        <i class="fas fa-book"> About You</i>
+                    </strong>
+                </h3>
+                <h4>
+                    <i class="fas fa-user"> Name (Required)</i>
+                </h4>
+                <input type="text" id="name" class="form-control" required>
+                <h4>
+                    <i class="fas fa-camera-retro"> Link to Photo Image (Required)</i>
+                </h4>
+                <input type="text" id="photo" class="form-control" required>
+                <hr>
 
-        <div id="questionContainer"></div>
-        <br>
-        <br>
-        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" data-toggle="modal" data-target="#resultsModalCenter">
-            Submit
-        </button>
+                <div id="questionContainer"></div>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" data-toggle="modal" data-target="#resultsModalCenter">
+                    Submit
+                </button>
+            </div>
+        </form>
         <hr>
         <footer class="footer">
             <div class="container">
@@ -93,6 +99,8 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
         crossorigin="anonymous"></script>
+    <!--Chosen-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen-sprite.png"></script>
     <!--Javascript-->
     <script type="text/javascript">
         $(document).ready(() => {
@@ -210,11 +218,6 @@
                     })
 
                 }
-
-                // let options = $("#questionContainer").find("select option:selected");
-                // let scores = [];
-                // scores.each(function (index, option) {
-                //     answers.push($(option).val());
 
                 //NO CODE BELOW THIS LINE
             });
