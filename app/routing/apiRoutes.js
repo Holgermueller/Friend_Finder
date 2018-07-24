@@ -3,12 +3,12 @@ const listOfFriends = require("../data/friends.js");
 
 //GET route to the url /api/friends for displaying JSON of possible friends
 module.exports = function (app) {
-    app.get('/api/friends', function (req, res) {
+    app.get('/api/friends', (req, res) => {
         res.json(listOfFriends);
     });
 
     //POST routes /api/friends for handling incoming survey results
-    app.post('/api/friends', function (req, res) {
+    app.post('/api/friends', (req, res) => {
         let newFriendsScores = req.body.scores;
         let arrayForScore = [];
         let friendCount = 0;

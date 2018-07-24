@@ -32,31 +32,160 @@
             <i class="fas fa-check-circle"> Survey Questions</i>
         </h2>
         <hr>
-        <form>
-            <div class="form-group">
-                <h3>
-                    <strong>
-                        <i class="fas fa-book"> About You</i>
-                    </strong>
-                </h3>
-                <h4>
-                    <i class="fas fa-user"> Name (Required)</i>
-                </h4>
-                <input type="text" id="name" class="form-control" required>
-                <h4>
-                    <i class="fas fa-camera-retro"> Link to Photo Image (Required)</i>
-                </h4>
-                <input type="text" id="photo" class="form-control" required>
-                <hr>
+        <div class="form-group">
+            <h3>
+                <strong>
+                    <i class="fas fa-book"> About You</i>
+                </strong>
+            </h3>
+            <br>
+            <h4>
+                <i class="fas fa-user"> Name (Required)</i>
+            </h4>
+            <input type="text" id="name" class="form-control" required>
+            <br>
+            <h4>
+                <i class="fas fa-camera-retro"> Link to Photo Image (Required)</i>
+            </h4>
+            <input type="text" id="photo" class="form-control" required>
+            <hr>
 
-                <div id="questionContainer"></div>
-                <br>
-                <br>
-                <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" data-toggle="modal" data-target="#resultsModalCenter">
-                    Submit
-                </button>
-            </div>
-        </form>
+            <h3>
+                <strong>Question 1</strong>
+            </h3>
+            <h4>You've just learned how to use a gun. Everything is now a target.</h4>
+            <select class="chosen-select" id="q1">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br>
+            <h3>
+                <strong>Question 2</strong>
+            </h3>
+            <h4>Bazookas are perfect for killing bumble bees.</h4>
+            <select class="chosen-select" id="q2">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br>
+            <h3>
+                <strong>Question 3</strong>
+            </h3>
+            <h4>Putting things in baskets properly is difficult.</h4>
+            <select class="chosen-select" id="q3">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br>
+            <h3>
+                <strong>Question 4</strong>
+            </h3>
+            <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+            <select class="chosen-select" id="q4">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br>
+            <h3>
+                <strong>Question 5</strong>
+            </h3>
+            <h4>You've picked something and have gotten nasty at it.</h4>
+            <select class="chosen-select" id="q5">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br>
+            <h3>
+                <strong>Question 6</strong>
+            </h3>
+            <h4>You wish to stand atop a pedastle, surveying your kingdom.</h4>
+            <select class="chosen-select" id="q6">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br>
+            <h3>
+                <strong>Question 7</strong>
+            </h3>
+            <h4>You've memorized all of the lyrics to Gangnam Style.</h4>
+            <select class="chosen-select" id="q7">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br>
+            <h3>
+                <strong>Question 8</strong>
+            </h3>
+            <h4>Deadpool is your favorite movie.</h4>
+            <select class="chosen-select" id="q8">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br>
+            <h3>
+                <strong>Question 9</strong>
+            </h3>
+            <h4>You value your alone time.</h4>
+            <select class="chosen-select" id="q9">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br>
+            <h3>
+                <strong>Question 10</strong>
+            </h3>
+            <h4>You are willing to fight a friend over the last slice of pizza.</h4>
+            <select class="chosen-select" id="q10">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" data-toggle="modal" data-target="#resultsModalCenter">
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                Submit
+            </button>
+        </div>
         <hr>
         <footer class="footer">
             <div class="container">
@@ -74,7 +203,9 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Your Friend is:</h5>
+                    <h5 class="modal-title">
+                        <strong> Friend is:</strong>
+                    </h5>
                     <button type="submit" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -92,135 +223,93 @@
     </div>
 
     <!--Scripts-->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
     <!--Bootstrap scripts-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
-        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.bundle.min.js" integrity="sha384-CS0nxkpPy+xUkNGhObAISrkg/xjb3USVCwy+0/NMzd5VxgY4CMCyTkItmy5n0voC" crossorigin="anonymous"></script>
     <!--Chosen-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen-sprite.png"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
     <!--Javascript-->
     <script type="text/javascript">
         $(document).ready(() => {
-            //dynamically create survey form
-            let choices = [1, 2, 3, 4, 5];
-            let questions = [
-                "Your mind constantly buzzes with unfulfilled ideas and plans.",
-                "Generally speaking, you rely more on your experience than your imagination.",
-                "You find it easy to stay relaxed and focused even when there is some pressure.",
-                "You rarely do something just out of sheer curiosity.",
-                "People can constantly upset you.",
-                "It is often difficult for you to relate to other people’s feelings.",
-                "In a discussion, truth should be more important than people’s sensitivities.",
-                "You rarely get carried away by fantasies and ideas.",
-                "You think that everyone’s views should be respected regardless of whether they are supported by facts or not.",
-                "You feel drained after spending time with a group of people."
-            ]
-
-            for (let i = 0; i < questions.length; i++) {
-                let questionHTML = getQuestionHTML(questions[i], i + 1);
-                $('#questionContainer').append(questionHTML);
-            }
-
-            function getQuestionHTML(question, number) {
-                //use jquery to make html elements to hold questions
-                let questionHTML = $("<div>");
-                let titleHTML = $("<h3>");
-                titleHTML.text("Question " + number);
-                questionHTML.append(titleHTML);
-                let questionTextHTML = $("<h4>");
-                questionTextHTML.text(question);
-                questionHTML.append(questionTextHTML);
-                let selectHTML = getChoicesHTML();
-                questionHTML.append(selectHTML);
-                return questionHTML;
-            }
-
-            function getChoicesHTML() {
-                //dynamically create dropdown boxes
-                let selectHTML = $("<select>");
-                selectHTML.append("<option value='0'>Select one</option>");
-
-                for (let i = 0; i < choices.length; i++) {
-                    let optionHTML = $("<option>");
-                    optionHTML.val(choices[i]);
-                    let text = choices[i];
-                    if (choices[i] === 1) {
-                        text += " (Strongly Disagree)"
-                    } else if (choices[i] === 5) {
-                        text += " (Strongly Agree)"
-                    }
-                    optionHTML.text(text);
-                    selectHTML.append(optionHTML);
+            //chosen CSS
+            const config = {
+                ".chosen-select": {},
+                ".chosen-select-deselect": {
+                    allow_single_deselect: true
+                },
+                ".chosen-select-no-single": {
+                    disable_search_threshold: 10
+                },
+                ".chosen-select-no-results": {
+                    no_results_text: "Nothing found. Too bad."
+                },
+                ".chosen-select-width": {
+                    width: "95%"
                 }
-                return selectHTML;
+            };
+
+            for (let selector in config) {
+                $(selector).chosen(config[selector]);
             }
 
-            $("#submit").on("click", () => {
-                //form validation
-                function formValidated() {
-                    let formIsValid = true;
-                    $(".form-control").each(function () {
+            //grab form input
+            $("#submit").on("click", (event) => {
+                event.preventDefault();
+
+                //validate form
+                function formValidation() {
+                    let isValid = true;
+                    $(".form-control").each(function() {
                         if ($(this).val() === "") {
-                            formIsValid = false;
+                            isValid = false;
                         }
                     });
 
-                    $("#questionContainer").each(function () {
+                    $(".chosen-select").each(function() {
                         if ($(this).val() === "") {
-                            formIsValid = false;
+                            isValid = false;
                         }
                     });
-                    return formIsValid;
+                    return isValid;
                 }
-                //if form is valid
-                if (formValidated() === true) {
-                    let scores = [];
-                    scores.each((index, option) => {
-                        answers.push($(option).val());
-                    });
-                    let aNewFriend = {
-                        name: $('#name').val().trim(),
-                        profilePic: $('#photo').val().trim(),
-                        scores: [
-                            $("#questionContainer").find("select option:selected")
+
+                //all required fields are filled in
+                if (formValidation()) {
+                    //object to grab user data
+                    let userData = {
+                        name: $("#name").val(),
+                        photo: $("#photo").val(),
+                        score: [
+                            $("#q1").val(),
+                            $("#q2").val(),
+                            $("#q3").val(),
+                            $("#q4").val(),
+                            $("#q5").val(),
+                            $("#q6").val(),
+                            $("#q7").val(),
+                            $("#q8").val(),
+                            $("#q9").val(),
+                            $("#q10").val()
                         ]
                     };
-                    console.log(aNewFriend);
-                    //save URL in variable
-                    const surveyURL = window.location.origin;
+                    //post data to firned API
+                    $.post("/api/friends", userData, function(data) {
+                        //grab result
+                        $("#match-name").text(data.name);
+                        $("#match-img").attr("src", data.photo);
 
-                    //AJAX post data to friend array
-                    $.post(surveyURL + "/api/friends", aNewFriend, (date) => {
-                        $("#matchName").text(data.name);
-                        $("#matchPic").attr("src", data.profilePic);
+                        //show modal
+                        $("#results-modal").modal("toggle");
                     });
-
-                    //show modal
-                    $('#submit').on('show.bs.modal', (event) => {
-                        const button = $(event.relatedTarget) // Button that triggered the modal
-                        let recipient = button.data('select option:selected') // Extract info from data-* attributes
-                        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-                        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-                        let modal = $(this)
-                        modal.find('.modal-title').text('New message to ' + recipient)
-                        modal.find('.modal-body input').val(recipient)
-                    })
-
                 } else {
-                    //show modal
-                    alert("You must fill out all of the fields before you submit.")
-                    $('#submit').on('shown.bs.modal', function () {
-                        $('#myInput').trigger('focus')
-                        $('.modal-body').append(document.createTextNode('You must fill out all of the fields.'))
-                    })
-
+                    alert("Please fill out all of the fields before submitting.");
                 }
-
-                //NO CODE BELOW THIS LINE
             });
+            //NO CODE BELOW THIS LINE
         });
     </script>
 </body>
