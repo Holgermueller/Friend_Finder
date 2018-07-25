@@ -2,7 +2,7 @@ const listOfFriends = require("../data/friends.js");
 //console.log(listOfFriends);
 
 //GET route to the url /api/friends for displaying JSON of possible friends
-module.exports = function (app) {
+module.exports = (app) => {
     app.get('/api/friends', (req, res) => {
         res.json(listOfFriends);
     });
@@ -13,7 +13,6 @@ module.exports = function (app) {
         let arrayForScore = [];
         let friendCount = 0;
         let bestMatch = 0;
-
         //run through current list of friends
         for (let i = 0; i < listOfFriends.length; i++) {
             let differenceInScores = 0;

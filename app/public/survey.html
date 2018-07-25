@@ -199,7 +199,7 @@
     </div>
 
     <!--modal-->
-    <div class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -280,7 +280,7 @@
                 //all required fields are filled in
                 if (formValidation()) {
                     //object to grab user data
-                    let userData = {
+                    let newFriend = {
                         name: $("#name").val(),
                         photo: $("#photo").val(),
                         score: [
@@ -297,13 +297,13 @@
                         ]
                     };
                     //post data to firned API
-                    $.post("/api/friends", userData, function(data) {
+                    $.post('/api/friends', newFriend, function(data) {
                         //grab result
                         $("#match-name").text(data.name);
                         $("#match-img").attr("src", data.photo);
 
                         //show modal
-                        $("#results-modal").modal("toggle");
+                        $("#resultsModal").modal();
                     });
                 } else {
                     alert("Please fill out all of the fields before submitting.");
