@@ -280,7 +280,7 @@
                 //all required fields are filled in
                 if (formValidation()) {
                     //object to grab user data
-                    let newFriend = {
+                    let userData = {
                         name: $("#name").val(),
                         photo: $("#photo").val(),
                         score: [
@@ -297,10 +297,10 @@
                         ]
                     };
                     //post data to firned API
-                    $.post('/api/friends', newFriend, function(data) {
+                    $.post('/api/friends', userData, function(data) {
                         //grab result
-                        $("#match-name").text(data.name);
-                        $("#match-img").attr("src", data.photo);
+                        $("#match-name").text(data.matchName);
+                        $("#match-img").attr("src", data.matchName);
 
                         //show modal
                         $("#resultsModal").modal();
