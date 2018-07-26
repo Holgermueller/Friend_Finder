@@ -1,4 +1,4 @@
-let path = require('path');
+const path = require('path');
 
 //GET route to /survey
 module.exports = function(app) {

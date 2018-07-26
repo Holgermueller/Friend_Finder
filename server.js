@@ -1,11 +1,16 @@
 //requires
-const bodyParser = require('body-parser');
 const express = require('express');
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
+
 const path = require('path');
 
 //get server running
 const app = express()
 const PORT = process.env.PORT || 3000;
+
+//morgan
+app.use(morgan('tiny'));
 
 //parse data with express
 app.use(bodyParser.json());
