@@ -2,7 +2,7 @@ const listOfFriends = require("../data/friends.js");
 //console.log(listOfFriends);
 
 //GET route to the url /api/friends for displaying JSON of possible friends
-module.exports = (app) => {
+module.exports = app => {
     app.get('/api/friends', (req, res) => {
         res.send(listOfFriends);
     });

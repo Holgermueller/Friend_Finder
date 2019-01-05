@@ -1,6 +1,5 @@
-html,
-body {
-    background-image: url("/images/crowd.png");
+.container {
+    background-image: url("../images/crowd.png");
 }
 
 h2 {
