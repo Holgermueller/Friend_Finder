@@ -1,0 +1,12 @@
+html,
+body {
+    background-image: url("/images/crowd.png");
+}
+
+h2 {
+    color: ghostwhite;
+}
+
+.credit {
+  font-size: 6px;
+}
