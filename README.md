@@ -10,7 +10,7 @@ A dating app.
 * [require](https://www.npmjs.com/package/require) 
 
 ### Frameworks
-* [bootstrap](https://www.bootstrapcdn.com/)
+* [materialize](https://materializecss.com/)
 * [fontawesome](https://fontawesome.com/)
 * [jquery](https://code.jquery.com/)
 
