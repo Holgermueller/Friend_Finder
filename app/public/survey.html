@@ -247,15 +247,31 @@
   <script type="text/javascript">
     $(document).ready(() => {
 
-      //grab form input
       $("#submit").on("click", event => {
         event.preventDefault();
+        //get user data
+        let userData = {
+          name: $('#name').val(),
+          photo: $('#photo').val(),
+          scores: [
+            $('#q1').val(),
+            $('#q2').val(),
+            $('#q3').val(),
+            $('#q4').val(),
+            $('#q5').val(),
+            $('#q6').val(),
+            $('#q7').val(),
+            $('#q8').val(),
+            $('#q9').val(),
+            $('#q10').val(),
 
-        $('#resultsModal').modal();
+          ]
+        };
+        console.log(userData);
+        //LAUNCH MODALS!!!
+        //$('#resultsModal').modal();
 
         //$('#errorModal').modal();
-        console.log('click');
-
       });
       //NO CODE BELOW THIS LINE
     });
