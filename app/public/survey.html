@@ -249,29 +249,49 @@
 
       $("#submit").on("click", event => {
         event.preventDefault();
-        //get user data
-        let userData = {
-          name: $('#name').val(),
-          photo: $('#photo').val(),
-          scores: [
-            $('#q1').val(),
-            $('#q2').val(),
-            $('#q3').val(),
-            $('#q4').val(),
-            $('#q5').val(),
-            $('#q6').val(),
-            $('#q7').val(),
-            $('#q8').val(),
-            $('#q9').val(),
-            $('#q10').val(),
+        //validate form
+        function formValidation() {
+          let isvalid = true;
+          $('.form-control').each(function () {
+            if ($(this).val() === '') {
+              isvalid = false;
+            }
+          });
 
-          ]
-        };
-        console.log(userData);
-        //LAUNCH MODALS!!!
-        //$('#resultsModal').modal();
+          $('.browser-default').each(function () {
+            if ($(this).val() === '') {
+              isvalid = false;
+            }
+          });
+          return isvalid;
+        }
 
-        //$('#errorModal').modal();
+        if (formValidation()) {
+          let userData = {
+            name: $('#name').val(),
+            photo: $('#photo').val(),
+            scores: [
+              $('#q1').val(),
+              $('#q2').val(),
+              $('#q3').val(),
+              $('#q4').val(),
+              $('#q5').val(),
+              $('#q6').val(),
+              $('#q7').val(),
+              $('#q8').val(),
+              $('#q9').val(),
+              $('#q10').val()
+            ]
+          };
+          // AJAX post form data
+          // $.post("", userData, data => {
+          //   //LAUNCH MODALS!!!
+            $('#resultsModal').modal();
+          // });
+
+        } else {
+          $('#errorModal').modal();
+        }
       });
       //NO CODE BELOW THIS LINE
     });
