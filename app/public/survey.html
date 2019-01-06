@@ -217,7 +217,6 @@
   </div>
 
   <!-- Error Modal -->
-
   <div class="modal" id="errorModal">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -284,10 +283,12 @@
             ]
           };
           // AJAX post form data
-          // $.post("", userData, data => {
-          //   //LAUNCH MODALS!!!
+          $.post("/api/listOfFriends", userData, data => {
+            //LAUNCH MODALS!!!
+            $('#matchName').text(data.name);
+            $('#matchPic').attr('src', data.photo);
             $('#resultsModal').modal();
-          // });
+          });
 
         } else {
           $('#errorModal').modal();
