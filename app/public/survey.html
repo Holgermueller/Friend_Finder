@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Survey</title>
   <!--Bootstrap CSS-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
   <!--fontawesome-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
     crossorigin="anonymous">
@@ -192,7 +192,7 @@
     </footer>
   </div>
 
-  <!--modal-->
+  <!-- Results Modal -->
   <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -216,87 +216,46 @@
     </div>
   </div>
 
+  <!-- Error Modal -->
+
+  <div class="modal" id="errorModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Error!</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>Please fill out all of the fields before submitting!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Back to questions</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!--Scripts-->
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
-  <!--Chosen-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js" integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP"
+    crossorigin="anonymous"></script>
   <!--Javascript-->
   <script type="text/javascript">
     $(document).ready(() => {
-      //chosen CSS
-      const config = {
-        ".chosen-select": {},
-        ".chosen-select-deselect": {
-          allow_single_deselect: true
-        },
-        ".chosen-select-no-single": {
-          disable_search_threshold: 10
-        },
-        ".chosen-select-no-results": {
-          no_results_text: "Nothing found. Too bad."
-        },
-        ".chosen-select-width": {
-          width: "95%"
-        }
-      };
-
-      for (let selector in config) {
-        $(selector).chosen(config[selector]);
-      }
 
       //grab form input
-      $("#submit").on("click", (event) => {
+      $("#submit").on("click", event => {
         event.preventDefault();
 
-        //validate form
-        function formValidation() {
-          let isValid = true;
-          $(".form-control").each(function () {
-            if ($(this).val() === "") {
-              isValid = false;
-            }
-          });
+        $('#resultsModal').modal();
 
-          $(".chosen-select").each(function () {
-            if ($(this).val() === "") {
-              isValid = false;
-            }
-          });
-          return isValid;
-        }
+        //$('#errorModal').modal();
+        console.log('click');
 
-        //all required fields are filled in
-        if (formValidation()) {
-          //object to grab user data
-          let userData = {
-            name: $("#name").val(),
-            photo: $("#photo").val(),
-            score: [
-              $("#q1").val(),
-              $("#q2").val(),
-              $("#q3").val(),
-              $("#q4").val(),
-              $("#q5").val(),
-              $("#q6").val(),
-              $("#q7").val(),
-              $("#q8").val(),
-              $("#q9").val(),
-              $("#q10").val()
-            ]
-          };
-          //post data to firned API
-          $.post('/api/friends', userData, function (data) {
-            //grab result
-            $("#match-name").text(data.matchName);
-            $("#match-img").attr("src", data.matchName);
-
-            //show modal
-            $("#resultsModal").modal();
-          });
-        } else {
-          alert("Please fill out all of the fields before submitting.");
-        }
       });
       //NO CODE BELOW THIS LINE
     });
