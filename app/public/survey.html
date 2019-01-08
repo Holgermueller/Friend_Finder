@@ -248,19 +248,13 @@
 
       $("#submit").on("click", event => {
         event.preventDefault();
-        //validate form
         function formValidation() {
           let isvalid = true;
           $('.form-control').each(function () {
-            if ($(this).val() === '') {
-              isvalid = false;
-            }
+            $(this).val() === '' ? isvalid = false : true
           });
-
           $('.browser-default').each(function () {
-            if ($(this).val() === '') {
-              isvalid = false;
-            }
+            $(this).val() === '' ? isvalid = false : true
           });
           return isvalid;
         }

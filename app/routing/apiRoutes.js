@@ -17,7 +17,6 @@ module.exports = app => {
 
     let totalDiff;
 
-    //search friends already on list
     for (let i = 0; i < friends.length; i++) {
       let currentFriend = friends[i];
       let totalDiff = 0;
