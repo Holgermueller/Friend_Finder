@@ -1,10 +1,8 @@
-//store data from survey here as an array of objects.
-
-let listOfFriends = [{
+let friends = [{
     //example 'borrowed' from assignment instructions
     "name": "Ahmed",
     "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-    "score": [
+    "scores": [
         5,
         1,
         4,
@@ -19,4 +17,4 @@ let listOfFriends = [{
 }
 ]
 
-module.exports = listOfFriends;
+module.exports = friends;

@@ -48,7 +48,7 @@
         <strong>Question 1</strong>
       </h3>
       <h4>You've just learned how to use a gun. Everything is now a target.</h4>
-      <select class="browser-default" id="q1">
+      <select class="chosen-select browser-default" id="q1">
         <option value="">Select an option:</option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -61,7 +61,7 @@
         <strong>Question 2</strong>
       </h3>
       <h4>Bazookas are perfect for killing bumble bees.</h4>
-      <select class="browser-default" id="q2">
+      <select class="chosen-select browser-default" id="q2">
         <option value="">Select an option:</option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -74,7 +74,7 @@
         <strong>Question 3</strong>
       </h3>
       <h4>Putting things in baskets properly is difficult.</h4>
-      <select class="browser-default" id="q3">
+      <select class="chosen-select browser-default" id="q3">
         <option value="">Select an option:</option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -87,7 +87,7 @@
         <strong>Question 4</strong>
       </h3>
       <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
-      <select class="browser-default" id="q4">
+      <select class="chosen-select browser-default" id="q4">
         <option value="">Select an option:</option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -100,7 +100,7 @@
         <strong>Question 5</strong>
       </h3>
       <h4>You've picked something and have gotten nasty at it.</h4>
-      <select class="browser-default" id="q5">
+      <select class="chosen-select browser-default" id="q5">
         <option value="">Select an option:</option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -113,7 +113,7 @@
         <strong>Question 6</strong>
       </h3>
       <h4>You wish to stand atop a pedastle, surveying your kingdom.</h4>
-      <select class="browser-default" id="q6">
+      <select class="chosen-select browser-default" id="q6">
         <option value="">Select an option:</option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -126,7 +126,7 @@
         <strong>Question 7</strong>
       </h3>
       <h4>You've memorized all of the lyrics to Gangnam Style.</h4>
-      <select class="browser-default" id="q7">
+      <select class="chosen-select browser-default" id="q7">
         <option value="">Select an option:</option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -139,7 +139,7 @@
         <strong>Question 8</strong>
       </h3>
       <h4>Deadpool is your favorite movie.</h4>
-      <select class="browser-default" id="q8">
+      <select class="chosen-select browser-default" id="q8">
         <option value="">Select an option:</option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -152,7 +152,7 @@
         <strong>Question 9</strong>
       </h3>
       <h4>You value your alone time.</h4>
-      <select class="browser-default" id="q9">
+      <select class="chosen-select browser-default" id="q9">
         <option value="">Select an option:</option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -165,7 +165,7 @@
         <strong>Question 10</strong>
       </h3>
       <h4>You are willing to fight a friend over the last slice of pizza.</h4>
-      <select class="browser-default" id="q10">
+      <select class="chosen-select browser-default" id="q10">
         <option value="">Select an option:</option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -207,7 +207,7 @@
         <div class="modal-body">
           <div id="matchName"></div>
           <br>
-          <div id="matchPic"></div>
+          <img id="matchPic"></img>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -266,7 +266,7 @@
         }
 
         if (formValidation()) {
-          let userData = {
+          let friendData = {
             name: $('#name').val(),
             photo: $('#photo').val(),
             scores: [
@@ -282,12 +282,12 @@
               $('#q10').val()
             ]
           };
-          // AJAX post form data
-          $.post("/api/listOfFriends", userData, data => {
-            //LAUNCH MODALS!!!
-            $('#matchName').text(data.name);
+
+          $.post("/api/friends", friendData, data => {
+            console.log(data);
+            $('#matchName').append(`<h3>${data.name}</h3>`);
             $('#matchPic').attr('src', data.photo);
-            $('#resultsModal').modal();
+            $('#resultsModal').modal("toggle");
           });
 
         } else {

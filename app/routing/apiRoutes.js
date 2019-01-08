@@ -1,43 +1,41 @@
-const listOfFriends = require("../data/friends");
+const friends = require("../data/friends");
 
 module.exports = app => {
   app.get('/api/friends', (req, res) => {
-    res.json(listOfFriends);
+    res.json(friends);
   });
 
   app.post('/api/friends', (req, res) => {
     let bestMatch = {
       name: '',
       photo: '',
-      friendDifference: Infinity
+      scores: []
     };
 
     const userInput = req.body;
-    const userResponse = userInput.score;
+    const userResponse = userInput.scores;
 
     let totalDiff;
 
     //search friends already on list
-    for (let i = 0; i < listOfFriends.length; i++) {
-      let currentFriend = listOfFriends[i];
+    for (let i = 0; i < friends.length; i++) {
+      let currentFriend = friends[i];
       let totalDiff = 0;
 
-      for (let j = 0; j < currentFriend.score.length; j++) {
-        let currentFriendScore = currentFriend.score[j];
+      for (let j = 0; j < currentFriend.scores.length; j++) {
+        let currentFriendScore = currentFriend.scores[j];
         let currentUserScore = userResponse[j];
 
         totalDiff += Math.abs(parseInt(currentUserScore) - parseInt(currentFriendScore));
       }
 
-      if (totalDiff <= bestMatch.friendDifference) {
+      if (totalDiff <= bestMatch.scores) {
         bestMatch.name = currentFriend.name;
         bestMatch.photo = currentFriend.photo;
-        bestMatch.friendDifference = totalDiff;
+        bestMatch.scores = totalDiff;
       }
     }
-    //add new user
-    listOfFriends.push(userInput);
-    //send apt response
+    friends.push(userInput);
     res.json(bestMatch);
     console.log(bestMatch);
   });
