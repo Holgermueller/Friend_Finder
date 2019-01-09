@@ -9,11 +9,11 @@ module.exports = app => {
     let bestMatch = {
       name: '',
       photo: '',
-      scores: []
+      friendDifference: []
     };
 
-    const userInput = req.body;
-    const userResponse = userInput.scores;
+    const userData = req.body;
+    const userScores = userData.scores;
 
     let totalDiff;
 
@@ -23,19 +23,19 @@ module.exports = app => {
 
       for (let j = 0; j < currentFriend.scores.length; j++) {
         let currentFriendScore = currentFriend.scores[j];
-        let currentUserScore = userResponse[j];
+        let currentUserScore = userScores[j];
 
         totalDiff += Math.abs(parseInt(currentUserScore) - parseInt(currentFriendScore));
       }
 
-      if (totalDiff <= bestMatch.scores) {
+      if (totalDiff <= bestMatch.friendDifference) {
         bestMatch.name = currentFriend.name;
         bestMatch.photo = currentFriend.photo;
-        bestMatch.scores = totalDiff;
+        bestMatch.friendDifference = totalDiff;
       }
     }
-    friends.push(userInput);
+    friends.push(userData);
     res.json(bestMatch);
-    console.log(bestMatch);
+    //console.log(bestMatch);
   });
 };

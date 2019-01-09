@@ -260,7 +260,7 @@
         }
 
         if (formValidation()) {
-          let friendData = {
+          let userInput = {
             name: $('#name').val(),
             photo: $('#photo').val(),
             scores: [
@@ -277,7 +277,7 @@
             ]
           };
 
-          $.post("/api/friends", friendData, data => {
+          $.post("/api/friends", userInput, data => {
             console.log(data);
             $('#matchName').append(`<h3>${data.name}</h3>`);
             $('#matchPic').attr('src', data.photo);
