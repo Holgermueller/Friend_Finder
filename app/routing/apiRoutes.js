@@ -16,7 +16,6 @@ module.exports = app => {
     const userScores = userData.scores;
 
     let totalDiff;
-
     for (let i = 0; i < friends.length; i++) {
       let currentFriend = friends[i];
       let totalDiff = 0;
@@ -36,6 +35,5 @@ module.exports = app => {
     }
     friends.push(userData);
     res.json(bestMatch);
-    //console.log(bestMatch);
   });
 };

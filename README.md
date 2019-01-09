@@ -12,9 +12,9 @@ Holger Mueller (Everything)
 * [path](https://www.npmjs.com/package/path)
 
 ### Frameworks
-* [materialize](https://materializecss.com/)
-* [fontawesome](https://fontawesome.com/)
-* [jquery](https://code.jquery.com/)
+* [Bootstrap](https://www.bootstrapcdn.com/)
+* [Fontawesome](https://fontawesome.com/)
+* [jQuery](https://code.jquery.com/)
 
 ## How-to:
 

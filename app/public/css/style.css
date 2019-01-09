@@ -1,5 +1,6 @@
-.container {
+body {
     background-image: url("../images/crowd.png");
+    background-size: cover;
 }
 
 h2 {

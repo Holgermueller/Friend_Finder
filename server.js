@@ -11,7 +11,7 @@ app.use(morgan('tiny'));
 
 app.use(express.static('public'));
 
-app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 require('./app/routing/apiRoutes.js')(app);
