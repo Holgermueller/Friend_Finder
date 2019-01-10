@@ -17,4 +17,4 @@ app.use(bodyParser.json());
 require('./app/routing/apiRoutes.js')(app);
 require('./app/routing/htmlRoutes.js')(app);
 
-app.listen(3000, () => console.log('Example app listening on port: ' + PORT + '!'))
+app.listen(PORT, () => console.log('Example app listening on port: ' + PORT + '!'))
