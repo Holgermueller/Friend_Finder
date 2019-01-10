@@ -9,7 +9,7 @@ module.exports = app => {
     let bestMatch = {
       name: '',
       photo: '',
-      friendDifference: []
+      friendDifference: Infinity
     };
 
     const userData = req.body;
