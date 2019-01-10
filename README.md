@@ -1,6 +1,8 @@
 # Friend_Finder
 A dating app.
 
+Check it out: [Friend Finder](https://friendfinderap.herokuapp.com/)
+
 ## Author:
 Holger Mueller (Everything)
 
@@ -16,9 +18,10 @@ Holger Mueller (Everything)
 * [Fontawesome](https://fontawesome.com/)
 * [jQuery](https://code.jquery.com/)
 
-## How-to:
+## What it does:
+The user fills out a form and takes a survey. The app
+then compares the user's scores to the scores of others already
+in the database to determine the best match for the user. The user 
+is then presented with a new friend.
 
-
-
-#### Screen Shots
 
