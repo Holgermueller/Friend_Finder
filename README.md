@@ -7,7 +7,7 @@ Check it out: [Friend Finder](https://friendfinderap.herokuapp.com/)
 Holger Mueller (Everything)
 
 ### Tech used
-* node.js
+* [node.js](https://nodejs.org/en/)
 * [body-parser](https://www.npmjs.com/package/body-parser)
 * [express](https://www.npmjs.com/package/express)
 * [nodemon](https://www.npmjs.com/package/nodemon)
