@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const compression = require('compression');
 const bodyParser = require('body-parser');
 const path = require('path');
 
@@ -9,6 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(morgan('tiny'));
 
+app.use(compression());
 app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
