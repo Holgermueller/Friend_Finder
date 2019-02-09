@@ -13,10 +13,11 @@ app.use(morgan('tiny'));
 app.use(compression());
 app.use(express.static('public'));
 
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-require('./app/routing/apiRoutes.js')(app);
-require('./app/routing/htmlRoutes.js')(app);
+require('./routing/apiRoutes.js')(app);
+require('./routing/htmlRoutes.js')(app);
 
 app.listen(PORT, () => console.log('Example app listening on port: ' + PORT + '!'))
