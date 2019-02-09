@@ -25,11 +25,22 @@ body {
   text-align: center;
 }
 
+#submit {
+  background-image: linear-gradient(rgb(0, 123, 255), rgb(0, 195, 255));
+  border: none;
+}
+
+#submit:hover {
+  background-image: linear-gradient(rgb(0, 170, 255), rgb(0, 170, 255)) ;
+}
+
 .page-footer {
   width: 100%;
   background-color: rgb(240,248,255);
   border-radius: 15px;
+  border: 1px ridge rgb(0, 123, 255);
   padding: 1px;
+  margin-bottom: 2%;
 }
 
 ul {
