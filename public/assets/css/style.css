@@ -1,6 +1,7 @@
 body {
     background-image: url("../images/crowd.png");
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .jumbotron {
@@ -16,13 +17,23 @@ body {
   border: 2px ridge rgb(0, 123, 255);
 }
 
+.asterisk {
+  font-size: 0.5em;
+}
+
 .home-button {
-  background-color: rgb(240,248,255);
+  background-color: rgb(0, 123, 255);
   width: fit-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   border-radius: 15px;
   border: 2px ridge rgb(0, 123, 255);
   padding: 3px;
   text-align: center;
+}
+
+.fa-home {
+  color: rgb(240,248,255);
 }
 
 #submit {
@@ -34,6 +45,7 @@ body {
   background-image: linear-gradient(rgb(0, 170, 255), rgb(0, 170, 255)) ;
 }
 
+/* Footer */
 .page-footer {
   width: 100%;
   background-color: rgb(240,248,255);
@@ -41,15 +53,18 @@ body {
   border: 1px ridge rgb(0, 123, 255);
   padding: 1px;
   margin-bottom: 2%;
+  margin-left: 0;
 }
 
-ul {
-  list-style: none;
-  display: inline;
+.col-md {
+  text-align: center;
+}
+
+.copyright {
+  font-size: .95em;
 }
 
 .credit {
   font-size: 12px;
   color: black;
-  float: right;
 }
