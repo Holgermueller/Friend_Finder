@@ -1,7 +1,9 @@
-body {
+body,
+html {
   background-image: url("../images/crowd.png");
   background-size: cover;
   background-attachment: fixed;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .jumbotron {
@@ -31,6 +33,11 @@ body {
   padding: 3px;
   text-align: center;
 }
+button > p,
+a > p {
+  margin: 0;
+  padding: 4px;
+}
 
 .fa-home {
   color: rgb(240, 248, 255);
@@ -58,6 +65,11 @@ body {
 
 .col-md {
   text-align: center;
+}
+
+.col-md > p {
+  margin: 0;
+  padding: 4px;
 }
 
 .copyright {

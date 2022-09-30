@@ -1,66 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Friend Finder</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Friend Finder</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-    integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
-</head>
-
-<body>
-  <div class="container">
-
-    <div class="jumbotron main-header">
-      <h1><i class="fas fa-users"> Friend Finder</i></h1>
-      <hr>
-      <h3>Answer a few simple questions.</h3>
-      <h3>Then, we'll find you a potential friend. *</h3>
-      <br>
-      <div>
-        <a href="/survey">
-          <button type="button" class="btn btn-lg btn-primary" id="btnLink">
-            <h4><i class="fas fa-list-ul"> | Go to Survey</i></h4>
-          </button>
-        </a>
+  <body>
+    <div class="container">
+      <div class="jumbotron main-header">
+        <h1><i class="fas fa-users"> Friend Finder</i></h1>
+        <hr />
+        <h2>Answer a few simple questions.</h2>
+        <h2>Then, we'll find you a potential friend. *</h2>
+        <br />
+        <div>
+          <a href="/survey">
+            <button type="button" class="btn btn-lg btn-primary" id="btnLink">
+              <p><i class="fas fa-list-ul"> | Go to Survey</i></p>
+            </button>
+          </a>
+        </div>
+        <div>
+          <p class="asterisk">* Actual friendship not guaranteed.</p>
+        </div>
       </div>
-      <div>
-        <p class="asterisk">* Actual friendship not guaranteed.</p>
-      </div>
+
+      <footer class="row page-footer" style="margin-left: 0">
+        <div class="col-md">
+          <p>
+            <a href="/api/friends">API Friends List </a>|
+            <a
+              href="https://github.com/Holgermueller/Friend_Finder"
+              target="_blank"
+              >GitHub Repo</a
+            >
+          </p>
+        </div>
+        <div class="col-md">
+          <p class="copyright">&copy;2019 Holger Mueller</p>
+        </div>
+        <div class="col-md">
+          <p class="credit">Image from Pexels</p>
+        </div>
+      </footer>
     </div>
-
-    <footer class="row page-footer" style="margin-left:0;">
-      <div class="col-md">
-        <p>
-          <a href="/api/friends">API Friends List </a>| <a href="https://github.com/Holgermueller/Friend_Finder"
-            target="_blank">GitHub
-            Repo</a>
-        </p>
-      </div>
-      <div class="col-md">
-        <p class="copyright">&copy;2019 Holger Mueller</p>
-      </div>
-      <div class="col-md">
-        <p class="credit">Image from Pexels</p>
-      </div>
-    </footer>
-
-  </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"
-    integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP"
-    crossorigin="anonymous"></script>
-
-</body>
-
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"
+      integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
